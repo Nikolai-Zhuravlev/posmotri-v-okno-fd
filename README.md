@@ -1,6 +1,7 @@
 # Посмотри в окно
 
 Проектная работа по курсу веб-разработки Яндекс Практикума.
+https://github.com/Nikolai-Zhuravlev/posmotri-v-okno-fd
 
 ## О проекте
 
