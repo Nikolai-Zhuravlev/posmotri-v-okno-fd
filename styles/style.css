@@ -70,26 +70,27 @@ ol {
 
 .content {
   display: flex;
-  flex-direction: row;
   align-items: flex-end;
   width: 1140px;
   gap: 30px;
-}
-
-/* Предотвращаем сжатие левой колонки */
-.result {
-  flex-shrink: 0;
 }
 
 /* ========================
    СЕКЦИЯ RESULT (ЛЕВАЯ)
 ======================== */
 
+.result {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  flex-shrink: 0;
+}
+
 .result__video-container {
   position: relative;
   width: 711px;
   height: 386px;
-  margin-bottom: 23px;
 }
 
 .result__video {
@@ -115,9 +116,9 @@ ol {
 }
 
 .search-form__fieldset-title {
-  font-weight: 700;
+  font-weight: 400;
   font-size: 18px;
-  line-height: 1.17;
+  line-height: 22px;
   margin-bottom: 5px;
 }
 
@@ -146,12 +147,12 @@ ol {
   appearance: none;
   background-color: transparent;
   border: none;
-  border-top: 2px solid #fff;
-  border-bottom: 2px solid #fff;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
   color: #fff;
   font-family: inherit;
   font-size: inherit;
-  height: 27px;
+  min-height: 27px;
   width: 225px;
   padding: 0 2px;
 }
@@ -169,7 +170,7 @@ ol {
   display: block;
   width: 19px;
   height: 19px;
-  border: 2px solid #fff;
+  border: 1px solid #fff;
   padding: 1px;
   flex-shrink: 0;
 }
@@ -196,13 +197,15 @@ ol {
 ======================== */
 
 .button {
-  border: 2px solid #fff;
+  border: 1px solid #fff;
   color: #fff;
   font-family: inherit;
   font-size: inherit;
   font-weight: 700;
   background-color: transparent;
   cursor: pointer;
+  height: 34px;
+  padding: 6px 17px;
 }
 
 .button:hover {
@@ -210,7 +213,7 @@ ol {
 }
 
 .button:active {
-  color: rgb(255 255 255 / 0.5);
+  background-color: #545050;
 }
 
 .button:focus {
@@ -223,16 +226,12 @@ ol {
 }
 
 .search-form__submit-button {
-  height: 34px;
   width: 194px;
   align-self: flex-end;
-  padding: 6px 17px;
 }
 
 .more-button {
   width: 100%;
-  height: 34px;
-  padding: 6px 17px;
 }
 
 /* ========================
@@ -242,6 +241,7 @@ ol {
 .content__details {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   gap: 26px;
   flex-grow: 1;
   min-width: 0;
@@ -253,7 +253,7 @@ ol {
   font-size: 75px;
   font-weight: 700;
   text-transform: uppercase;
-  line-height: 1;
+  line-height: 94%;
 }
 
 .content__accent {
@@ -263,21 +263,19 @@ ol {
 /* Список карточек */
 .content__list-container {
   position: relative;
-  height: 386px;
+  height: 298px;
   overflow-y: auto;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
 }
 
 .content__list {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  align-items: center;
+  gap: 30px;
 }
 
 .content__list-item {
-  padding: 0 3px;
+  width: 100%;
 }
 
 /* ========================
@@ -289,6 +287,10 @@ ol {
   text-decoration: none;
   color: #fff;
   cursor: pointer;
+}
+
+.content__card-link:hover {
+  text-decoration: underline;
 }
 
 .content__card-link:focus {
@@ -305,17 +307,13 @@ ol {
 }
 
 .content__card-link:active {
-  background-color: #797373;
-}
-
-.content__card-link:hover .content__video-card-title {
-  text-decoration: underline;
+  background-color: #545050;
 }
 
 .content__video-card {
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
+  align-items: center;
 }
 
 .content__video-card-thumbnail {
@@ -326,25 +324,32 @@ ol {
 }
 
 .content__video-card-description-container {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
   flex-grow: 1;
   padding: 5px 15px;
+  min-width: 0;
 }
 
 .content__video-card-title {
+  font-family: Oswald, sans-serif;
   font-weight: 700;
   font-size: 30px;
-  line-height: 1;
+  line-height: 100%;
+  text-transform: uppercase;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
 .content__video-card-description {
+  font-family: 'Fira Sans Condensed', sans-serif;
+  font-weight: 400;
   font-size: 18px;
-  line-height: 1.3;
+  line-height: 16px;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 4;
   overflow: hidden;
 }
-
