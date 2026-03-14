@@ -109,10 +109,15 @@ ol {
   flex-direction: row;
   align-items: flex-start;
   gap: 40px;
+  width: 100%;
 }
 
 .search-form__fieldset {
   border: none;
+}
+
+.search-form__fieldset:last-of-type {
+  flex: 1;
 }
 
 .search-form__fieldset-title {
@@ -157,7 +162,7 @@ ol {
   padding: 0 2px;
 }
 
-.search-form__textfield:focus {
+.search-form__textfield:focus:not(:focus-visible) {
   outline: none;
 }
 
@@ -168,18 +173,21 @@ ol {
 /* Псевдочекбокс */
 .search-form__pseudo-checkbox {
   display: block;
+  position: relative;
   width: 19px;
   height: 19px;
   border: 1px solid #fff;
-  padding: 1px;
   flex-shrink: 0;
 }
 
 .search-form__pseudo-checkbox::after {
   content: '';
   display: block;
-  width: 100%;
-  height: 100%;
+  position: absolute;
+  top: 2px;
+  left: 1px;
+  width: 15px;
+  height: 15px;
   background-color: #fff;
   opacity: 0;
 }
@@ -216,7 +224,7 @@ ol {
   background-color: #545050;
 }
 
-.button:focus {
+.button:focus:not(:focus-visible) {
   outline: none;
 }
 
@@ -245,7 +253,6 @@ ol {
   gap: 26px;
   flex-grow: 1;
   min-width: 0;
-  overflow: hidden;
 }
 
 /* Заголовок */
@@ -266,8 +273,8 @@ ol {
   position: relative;
   width: 100%;
   height: 298px;
-  overflow-x: hidden;
   overflow-y: auto;
+  padding-right: 9px;
 }
 
 .content__list {
@@ -290,7 +297,6 @@ ol {
   text-decoration: none;
   color: #fff;
   cursor: pointer;
-  overflow: hidden;
 }
 
 .content__card-link:hover {
@@ -302,15 +308,15 @@ ol {
 }
 
 .content__card-link:focus-visible {
-  outline: 1px solid #fff;
+  outline: 1px dashed #2d6ce4;
   outline-offset: 2px;
 }
 
-.content__card-link_current {
-  background-color: #545050;
+.content__card-link:focus-visible .content__video-card-title {
+  color: #2d6ce4;
 }
 
-.content__card-link:active {
+.content__card-link_current {
   background-color: #545050;
 }
 
@@ -332,10 +338,8 @@ ol {
   display: flex;
   flex-direction: column;
   gap: 6px;
-  flex-grow: 1;
-  padding: 5px 15px;
-  min-width: 0;
-  overflow: hidden;
+  width: 196px;
+  height: 103px;
 }
 
 .content__video-card-title {
@@ -354,7 +358,7 @@ ol {
   font-family: 'Fira Sans Condensed', sans-serif;
   font-weight: 400;
   font-size: 18px;
-  line-height: 16px;
+  line-height: 16.2px;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 4;
