@@ -172,8 +172,9 @@ ol {
 
 /* Псевдочекбокс */
 .search-form__pseudo-checkbox {
-  display: block;
-  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 19px;
   height: 19px;
   border: 1px solid #fff;
@@ -183,9 +184,6 @@ ol {
 .search-form__pseudo-checkbox::after {
   content: '';
   display: block;
-  position: absolute;
-  top: 2px;
-  left: 1px;
   width: 15px;
   height: 15px;
   background-color: #fff;
